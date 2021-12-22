@@ -20,7 +20,7 @@ Per installare con Composer aggiungere `iw5edv/tim-sms-professional-client` al t
 ```json
 {
     "require": {
-        "apimatic/unirest-php": "^2.0"
+        "iw5edv/tim-sms-professional-client"
     }
 }
 ```
@@ -33,7 +33,7 @@ composer require iw5edv/tim-sms-professional-client
 
 ## Configurazione
 Configurare i dati personali username, password, token e alias
-modificando il file `src/TimSmsProfessionalClient.php`
+modificando il file `/src/TimSmsProfessionalClient.php`
 ```php
 .....
   private const USERNAME  = ' ';
