@@ -80,16 +80,23 @@ $result->raw_body;    // Unparsed body
 ## Ricerca SMS
 Per la ricerca dell'SMS è necessario recuperare ID della campagna al momento dell'invio
 
+*Un esempio di codice per recuperare ID dalla risposta dell'invio*
+```php
+$position = strpos($result->body->message, ':');
+$position ++;
+$code = substr($result->body->message, $position);
+```
+### Ricerca SMS inviato utilizzando ID precedentemente recuperato
 ```php
 $client = new iw5edv\TimSmsProfessionalClient();
-$code = '00000000';
+$code = '00000000';  //id campagna precedentemente recuperato
 $result = $client->cercaSms($code);
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
 *oppure*
 ```php
-$code = '00000000';
+$code = '00000000';  //id campagna precedentemente recuperato
 $result = \iw5edv\TimSmsProfessionalClient::cercaSms($code);
 
 echo '<pre>'; print_r($result); echo '</pre>';
