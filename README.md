@@ -105,7 +105,7 @@ echo '<pre>'; print_r($result); echo '</pre>';
 
 ## Controllo e Formattazione numero telefonico
 - Controllo del numero telefonico secondo gli standar ITALIANI
-- Formattazione nella forma giusta per invio sms `+393` `123456789`
+- Formattazione nella forma giusta per invio sms `+39 3` `123456789`
 
     - inizio numero con prefisso internazionale +39
     - controllo che rientri in un dei prefissi assegnati in Italia al 01/12/2021
