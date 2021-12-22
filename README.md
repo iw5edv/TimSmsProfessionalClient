@@ -7,7 +7,7 @@ https://timsmsprofessional.it è un servizio a pagamento della compagnia telefon
 ## Caratteristiche
 * Invio di singoli SMS utilizzando le API di timsmsprofessional.it
 * Ricerca del messaggio inviato per recuperare lo stato di effettiva consegna
-* Inserita una funzione per il controllo e la formattazione del numero telefonico prima dell'invio con controllo del reng di prefissi telefonici attribuiti al servizio mobile italiano alla data dal 21/12/2021
+* Inserita una funzione per il controllo e la formattazione del numero telefonico prima dell'invio con controllo che rientri nei di prefissi telefonici attribuiti al servizio mobile italiano alla data dal 21/12/2021
 
 ## Requisiti
 - PHP 5.6+
