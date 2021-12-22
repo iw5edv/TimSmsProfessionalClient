@@ -93,9 +93,12 @@ class TimSmsProfessionalClient {
 		if(preg_match($pattern, $numero)) {
 			return preg_replace('/^00/', '+', $numero);
 		}
+		
 		// tutti gli altri casi numero errato o non interpretabile
 		return false;
+		
 	}//public function formatNumeroIta
 
 }//class
+
 ?>
