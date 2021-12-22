@@ -1,0 +1,24 @@
+{
+  "name": " iw5edv/TimSmsProfessionalClient",
+  "description": "Semplice Libreria PHP Client per invio singoli SMS tramite API di TIM ",
+  "keywords": [
+    "TIM",
+    "smsprofessional",
+    "API"
+  ],
+  "type": "library",
+  "homepage": "https://github.com/iw5edv/TimSmsProfessionalClient",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "IW5EDV",
+      "homepage": "https://www.iw5edv.it",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-curl": "*",
+    "apimatic/unirest-php": "^2.0"
+  },
+}
