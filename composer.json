@@ -22,9 +22,4 @@
     "ext-curl": "*",
     "apimatic/unirest-php": "^2.0"
   },
-  "autoload": {
-    "psr-0": {
-      "iw5edv\\": "src/"
-    }
-  },
 }
