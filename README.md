@@ -7,7 +7,7 @@ https://timsmsprofessional.it è un servizio a pagamento della compagnia telefon
 ## Caratteristiche
 * Invio di singoli SMS utilizzando le API di timsmsprofessional.it
 * Ricerca del messaggio inviato per recuperare lo stato di effettiva consegna
-* Inserita una funzione per il controllo e la formattazione del numero telefonico prima dell'invio con controllo che rientri nei di prefissi telefonici attribuiti al servizio mobile italiano alla data dal 21/12/2021
+* Inserita una funzione per il controllo e la formattazione del numero telefonico prima dell'invio con controllo che rientri nei di prefissi telefonici attribuiti al servizio mobile italiano alla data del 01/12/2021
 
 ## Requisiti
 - PHP 5.6+
@@ -100,4 +100,36 @@ $code = '00000000';  //id campagna precedentemente recuperato
 $result = \iw5edv\TimSmsProfessionalClient::cercaSms($code);
 
 echo '<pre>'; print_r($result); echo '</pre>';
+```
+
+
+## Controllo e Formattazione numero telefonico
+- Controllo del numero telefonico secondo gli standar ITALIANI
+- Formattazione nella forma giusta per invio sms `+393` `123456789`
+
+    - inizio numero con prefisso internazionale +39
+    - controllo che rientri in un dei prefissi assegnati in Italia al 01/12/2021
+    - controlla la formalità del numero 10 cifre
+    - ammette i numeri a 9 cifre controllando che faccia parte dei prefissi assegnati
+
+Esempio di utilizzo per il solo controllo
+```php
+$to = '+391234567890';  //numero da testare
+if($to_format=\iw5edv\TimSmsProfessionalClient::formatNumeroIta($to)){
+    echo 'Numero Corretto ';
+    echo $to_format;
+} else {
+	echo 'Numero Errato';
+}
+```
+Esempio di controllo e formattazione con invio se controllo andato a buon fine
+```php
+$to = '+391234567890';  //numero da testare
+$text = 'Prova';
+if($to_format=\iw5edv\TimSmsProfessionalClient::formatNumeroIta($to)){
+	$result = \iw5edv\TimSmsProfessionalClient::InvioSms($to_format, $text);
+	echo '<pre>'; print_r($result); echo '</pre>';
+} else {
+	echo 'Numero Errato - SMS Non inviato!';
+}
 ```
