@@ -1,25 +1,39 @@
 {
-  "name": "iw5edv/tim-sms-professional-client",
-  "description": "Semplice Libreria PHP Client per invio singoli SMS tramite API di TIM ",
-  "keywords": [
-    "TIM",
-    "smsprofessional",
-    "API",
-    "client"
-  ],
-  "type": "library",
-  "homepage": "https://github.com/iw5edv/TimSmsProfessionalClient",
-  "license": "GPL-3.0",
-  "authors": [
-    {
-      "name": "IW5EDV",
-      "homepage": "https://www.iw5edv.it",
-      "role": "Developer"
+	"name": "iw5edv/tim-sms-professional-client",
+	"type": "library",
+	"description": "Semplice Libreria PHP Client per invio singoli SMS tramite API di TIM",
+	"keywords": ["TIM", "smsprofessional", "API", "client"],
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/iw5edv/TimSmsProfessionalClient",
+	"support": {
+		"issues": "https://github.com/iw5edv/TimSmsProfessionalClient/issues"
+	},
+	"authors": [
+		{
+		  "name": "IW5EDV",
+		  "homepage": "https://www.iw5edv.it",
+		  "role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.6.0",
+		"ext-curl": "*",
+		"apimatic/unirest-php": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "iw5edv\\": "src"
+        }
+    },
+	"autoload": {
+        "psr-0": {
+            "iw5edv\\": "src"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "process-timeout": 3600
     }
-  ],
-  "require": {
-    "php": ">=5.6.0",
-    "ext-curl": "*",
-    "apimatic/unirest-php": "^2.0"
-  }
 }
