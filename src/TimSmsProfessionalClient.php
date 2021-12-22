@@ -16,10 +16,10 @@ namespace iw5edv;
 
 class TimSmsProfessionalClient {
 	
-	private const USERNAME	= 'misetoscapi';
-	private const PASSWORD	= 'Salaoperativa5!';
-	private const TOKEN		= '5CD1C8EA9B97050F589D08682021AAD3F23D9532';
-	private const ALIAS		= 'Mise-Tosc';
+	private const USERNAME	= ' ';
+	private const PASSWORD	= ' ';
+	private const TOKEN	= ' ';
+	private const ALIAS	= ' ';
 	
 	private const BASE_URL = 'https://smartconsole.telecomitalia.it/ssc2-api/rest/';
 	private const HEADERS = array('Accept' => 'application/json');
@@ -47,14 +47,14 @@ class TimSmsProfessionalClient {
 
 	public function cercaSms($codesms){
 		$data = Array ( 
-			'username'			=> self::USERNAME,
-			'password'			=> self::PASSWORD,
-			'token'				=> self::TOKEN,
-			'alias'				=> self::ALIAS,
+			'username'		=> self::USERNAME,
+			'password'		=> self::PASSWORD,
+			'token'			=> self::TOKEN,
+			'alias'			=> self::ALIAS,
 			'codiceOperazione'	=> $codesms,
 			'numeroRicorrenza'	=> '0',
-			'offset'			=> '1',
-			'limit'				=> '10'
+			'offset'		=> '1',
+			'limit'			=> '10'
 		);
 		$body = \Unirest\Request\Body::form($data);
 		
