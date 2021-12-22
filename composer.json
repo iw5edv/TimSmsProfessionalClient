@@ -20,5 +20,5 @@
     "php": ">=5.6.0",
     "ext-curl": "*",
     "apimatic/unirest-php": "^2.0"
-  },
+  }
 }
