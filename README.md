@@ -42,7 +42,7 @@ modificando il file `/src/TimSmsProfessionalClient.php`
   private $alias     = ' ';  //numero completo da dove inviare i messaggi o Alias Certificato caricato sul proprio profilo
 .....
 ```
-Oppure creando il client con il construct
+Oppure instanzia l'oggetto con il costruct passando i dati
 ```php
 $client = new iw5edv\TimSmsProfessionalClient([
     'username'	=> ' ',
@@ -55,13 +55,22 @@ $client = new iw5edv\TimSmsProfessionalClient([
 # Utilizzo
 ## Inviare un singolo SMS
 ```php
+$client = new iw5edv\TimSmsProfessionalClient;
+$to = '+391234567890';
+$text = 'Prova';
+$result = $client->InvioSms($to, $text);
+
+echo '<pre>'; print_r($result); echo '</pre>';
+```
+*oppure utilizzando la sola funzione senza instanziare l'oggetto*
+```php
 $to = '+391234567890';
 $text = 'Prova';
 $result = \iw5edv\TimSmsProfessionalClient::InvioSms($to, $text)
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
-*oppure*
+*oppure passando anche i parametri di connessione*
 ```php
 $client = new iw5edv\TimSmsProfessionalClient([
     'username'	=> ' ',
@@ -89,6 +98,36 @@ $result->code;        // HTTP Status code
 $result->headers;     // Headers
 $result->body;        // Parsed body
 $result->raw_body;    // Unparsed body
+```
+
+un esempio di Object di risposta ad un corretto invio di messaggio
+```
+Unirest\Response Object
+(
+    [code] => 200
+    [raw_body] => {"name":"INVIOMESSAGGI","status":"OK","message":"Presa in carico della campagna andata a buon fine CODE:########"}
+    [body] => stdClass Object
+        (
+            [name] => INVIOMESSAGGI
+            [status] => OK
+            [message] => Presa in carico della campagna andata a buon fine CODE:########
+        )
+
+    [headers] => Array
+        (
+            [0] => HTTP/1.1 200
+            [Date] => Thu, 23 Dec 2021 22:10:22 GMT
+            [Server] => nginx/1.14.1
+            [Content-Type] => application/json
+            [X-ORACLE-DMS-RID] => 0
+            [X-ORACLE-DMS-ECID] => 
+            [X-SMB-ID] => 
+            [Cache-Control] => max-age=1
+            [Expires] => Thu, 23 Dec 2021 22:10:22 GMT
+            [Vary] => User-Agent
+            [Transfer-Encoding] => chunked
+        )
+)
 ```
 
 ## Ricerca SMS
