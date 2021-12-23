@@ -129,8 +129,8 @@ Unirest\Response Object
         )
 )
 ```
-Per controllare la risposta e quindi se l'operazione è andata a bun fine possiamo usare la funzione ```php getStatus()```
-che restiituisce un valore boleano `true` o `false`
+Per controllare la risposta e quindi se l'operazione è andata a bun fine possiamo usare la funzione `getStatus()` che restituisce un valore boleano `true` o `false`
+
 *Esempio*
 ```php
 if ($client->getStatus()) {
@@ -143,7 +143,7 @@ if ($client->getStatus()) {
 ## Ricerca SMS
 Per la ricerca dell'SMS è necessario recuperare ID della campagna al momento dell'invio.
 
-Per questo è stata inserita la funzione ```php getCode()```
+Per questo è stata inserita la funzione `getCode()`
 
 *Un esempio di codice per recuperare ID dalla risposta dell'invio*
 ```php
@@ -158,6 +158,11 @@ $result = \iw5edv\TimSmsProfessionalClient::cercaSms($code);
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
+### Esito di ricezione SMS
+Dopo aver effettuato la ricerca possiamo avvalerci delle funzioni `getEsitoBol()` o `getEsitoStr()` per verificare se l'SMS è stato ricevuto dal terminale
+
+- La funzione `getEsitoBol()` restituisce un valore Boleano `true` o `false`
+- La funzione `getEsitoStr()` restituisce un valore Stringa `Ricevuto` `Non Ricevuto` `ERRORE`
 
 ## Controllo e Formattazione numero telefonico
 - Controllo del numero telefonico secondo gli standar ITALIANI
@@ -176,16 +181,5 @@ if($to_format=\iw5edv\TimSmsProfessionalClient::formatNumeroIta($to)){
     echo $to_format;
 } else {
 	echo 'Numero Errato';
-}
-```
-Esempio di controllo e formattazione con invio se controllo andato a buon fine
-```php
-$to = '+391234567890';  //numero da testare
-$text = 'Prova';
-if($to_format=\iw5edv\TimSmsProfessionalClient::formatNumeroIta($to)){
-	$result = \iw5edv\TimSmsProfessionalClient::InvioSms($to_format, $text);
-	echo '<pre>'; print_r($result); echo '</pre>';
-} else {
-	echo 'Numero Errato - SMS Non inviato!';
 }
 ```
