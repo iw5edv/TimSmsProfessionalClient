@@ -16,24 +16,32 @@ namespace iw5edv;
 
 class TimSmsProfessionalClient {
 	
-	private const USERNAME	= ' ';
-	private const PASSWORD	= ' ';
-	private const TOKEN	= ' ';
-	private const ALIAS	= ' ';
+	private $username	= '';
+	private $password	= '';
+	private $token		= '';
+	private $alias		= '';  //numero completo da dove inviare i messaggi o Alias Certificato caricato sul proprio profilo
 	
 	private const BASE_URL = 'https://smartconsole.telecomitalia.it/ssc2-api/rest/';
 	private const HEADERS = array('Accept' => 'application/json');
 	
-	function __construct() {
-    
+	/**
+     * @param array ('username' => '', 'password' => '', 'token' => '', 'alias' => '')
+     * @return nul
+     */
+	function __construct($params = array()) {
+		$this->username = $params['username'];
+		$this->password = $params['password'];
+		$this->token	= $params['token'];
+		$this->alias	= $params['alias'];
 	}//function __construct
+
 
 	public function invioSms($msisdn, $testo){
 		$data = Array ( 
-			'username'	=> self::USERNAME,
-			'password'	=> self::PASSWORD,
-			'token'		=> self::TOKEN,
-			'alias'		=> self::ALIAS,
+			'username'	=> $this->username,
+			'password'	=> $this->password,
+			'token'		=> $this->token,
+			'alias'		=> $this->alias,
 			'testo'		=> $testo, 
 			'msisdn'	=> $msisdn,
 			'sr'		=> '1'
@@ -47,10 +55,10 @@ class TimSmsProfessionalClient {
 
 	public function cercaSms($codesms){
 		$data = Array ( 
-			'username'		=> self::USERNAME,
-			'password'		=> self::PASSWORD,
-			'token'			=> self::TOKEN,
-			'alias'			=> self::ALIAS,
+			'username'		=> $this->username,
+			'password'		=> $this->password,
+			'token'			=> $this->token,
+			'alias'			=> $this->alias,
 			'codiceOperazione'	=> $codesms,
 			'numeroRicorrenza'	=> '0',
 			'offset'		=> '1',
