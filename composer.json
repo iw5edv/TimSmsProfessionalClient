@@ -20,20 +20,9 @@
 		"ext-curl": "*",
 		"apimatic/unirest-php": "^2.0"
     },
-    "autoload": {
-        "psr-4": {
-            "iw5edv\\": "src"
-        }
-    },
 	"autoload": {
         "psr-0": {
-            "iw5edv\\": "src"
+            "iw5edv\\": "src/"
         }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "process-timeout": 3600
     }
 }
