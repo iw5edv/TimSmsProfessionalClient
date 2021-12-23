@@ -92,13 +92,15 @@ $result->raw_body;    // Unparsed body
 ```
 
 ## Ricerca SMS
-Per la ricerca dell'SMS è necessario recuperare ID della campagna al momento dell'invio
+Per la ricerca dell'SMS è necessario recuperare ID della campagna al momento dell'invio.
+
+Per questo è stata inserita la funzione ```php getCode()```
 
 *Un esempio di codice per recuperare ID dalla risposta dell'invio*
 ```php
-$position = strpos($result->body->message, ':');
-$position ++;
-$code = substr($result->body->message, $position);
+// dopo aver inviato il messaggio
+$code = $client->getCode();
+echo $code;
 ```
 ### Ricerca SMS inviato utilizzando ID precedentemente recuperato
 ```php
