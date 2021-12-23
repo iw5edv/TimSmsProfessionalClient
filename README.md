@@ -176,7 +176,7 @@ Dopo aver effettuato la ricerca possiamo avvalerci delle funzioni `getEsitoBol()
 Esempio di utilizzo per il solo controllo
 ```php
 $to = '+391234567890';  //numero da testare
-if($to_format=\iw5edv\TimSmsProfessionalClient::formatNumeroIta($to)){
+if($to_format = \iw5edv\TimSmsProfessionalClient::formatNumeroIta($to)){
     echo 'Numero Corretto ';
     echo $to_format;
 } else {
