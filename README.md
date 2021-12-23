@@ -85,7 +85,7 @@ $result = $client->InvioSms($to, $text);
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
 
-### Risposta
+## Risposta
 Per le caratteristiche della risposta vedere la libreria https://github.com/apimatic/unirest-php
 
 Alla ricezione di una risposta Unirest restituisce il risultato sotto forma di `Object`
