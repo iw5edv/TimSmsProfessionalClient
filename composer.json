@@ -21,6 +21,6 @@
 		"apimatic/unirest-php": "^2.0"
 	},
 	"autoload": {
-        	"classmap": ["vendor/SmsHosting/src/SmsHostingClient.php"]
+        	"classmap": ["src/"]
     	}
 }
