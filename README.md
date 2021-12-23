@@ -36,28 +36,37 @@ Configurare i dati personali username, password, token e alias
 modificando il file `/src/TimSmsProfessionalClient.php`
 ```php
 .....
-  private const USERNAME  = ' ';
-  private const PASSWORD  = ' ';
-  private const TOKEN     = ' ';
-  private const ALIAS     = ' ';  //numero completo da dove inviare i messaggi o Alias Certificato caricato sul proprio profilo
+  private $username  = ' ';
+  private $password  = ' ';
+  private $token     = ' ';
+  private $alias     = ' ';  //numero completo da dove inviare i messaggi o Alias Certificato caricato sul proprio profilo
 .....
+```
+Oppure creando il clinet con il construct
+```php
+$client = new iw5edv\TimSmsProfessionalClient([
+    'username'	=> ' ',
+    'password'	=> ' ',
+    'token'	=> ' ',
+    'alias'	=> ' '
+]);
 ```
 
 # Utilizzo
 ## Inviare un singolo SMS
 ```php
-$client = new iw5edv\TimSmsProfessionalClient();
 $to = '+391234567890';
 $text = 'Prova';
-$result = $client->InvioSms($to, $text);
+$result = \iw5edv\TimSmsProfessionalClient::InvioSms($to, $text)
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
 *oppure*
 ```php
+$client = new iw5edv\TimSmsProfessionalClient();
 $to = '+391234567890';
 $text = 'Prova';
-$result = \iw5edv\TimSmsProfessionalClient::InvioSms($to, $text)
+$result = $client->InvioSms($to, $text);
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
@@ -88,20 +97,19 @@ $code = substr($result->body->message, $position);
 ```
 ### Ricerca SMS inviato utilizzando ID precedentemente recuperato
 ```php
+$code = '00000000';  //id campagna precedentemente recuperato
+$result = \iw5edv\TimSmsProfessionalClient::cercaSms($code);
+
+echo '<pre>'; print_r($result); echo '</pre>';
+```
+*oppure*
+```php
 $client = new iw5edv\TimSmsProfessionalClient();
 $code = '00000000';  //id campagna precedentemente recuperato
 $result = $client->cercaSms($code);
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
-*oppure*
-```php
-$code = '00000000';  //id campagna precedentemente recuperato
-$result = \iw5edv\TimSmsProfessionalClient::cercaSms($code);
-
-echo '<pre>'; print_r($result); echo '</pre>';
-```
-
 
 ## Controllo e Formattazione numero telefonico
 - Controllo del numero telefonico secondo gli standar ITALIANI
