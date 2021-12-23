@@ -107,19 +107,6 @@ $result = \iw5edv\TimSmsProfessionalClient::cercaSms($code);
 
 echo '<pre>'; print_r($result); echo '</pre>';
 ```
-*oppure*
-```php
-$client = new iw5edv\TimSmsProfessionalClient([
-    'username'	=> ' ',
-    'password'	=> ' ',
-    'token'	=> ' ',
-    'alias'	=> ' '
-]);
-$code = '00000000';  //id campagna precedentemente recuperato
-$result = $client->cercaSms($code);
-
-echo '<pre>'; print_r($result); echo '</pre>';
-```
 
 ## Controllo e Formattazione numero telefonico
 - Controllo del numero telefonico secondo gli standar ITALIANI
