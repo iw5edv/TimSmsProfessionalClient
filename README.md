@@ -90,14 +90,15 @@ Per le caratteristiche della risposta vedere la libreria https://github.com/apim
 
 Alla ricezione di una risposta Unirest restituisce il risultato sotto forma di `Object`
 - `code` - HTTP Response Status Code (Example `200`)
-- `headers` - HTTP Response Headers
-- `body` - Parsed response body where applicable, for example JSON responses are parsed to Objects / Associative Arrays.
 - `raw_body` - Un-parsed response body
+- `body` - Parsed response body where applicable, for example JSON responses are parsed to Objects / Associative Arrays.
+- `headers` - HTTP Response Headers
+
 ```php
 $result->code;        // HTTP Status code
-$result->headers;     // Headers
-$result->body;        // Parsed body
 $result->raw_body;    // Unparsed body
+$result->body;        // Parsed body
+$result->headers;     // Headers
 ```
 
 un esempio di Object di risposta ad un corretto invio di messaggio
