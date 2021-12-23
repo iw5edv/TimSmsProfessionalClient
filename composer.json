@@ -22,7 +22,7 @@
     },
 	"autoload": {
         "psr-0": {
-            "iw5edv\\": "tim-smsprofessional-client/src/"
+            "iw5edv\\": "iw5edv/tim-smsprofessional-client/src/"
         }
     }
 }
