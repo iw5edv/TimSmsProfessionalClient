@@ -129,6 +129,16 @@ Unirest\Response Object
         )
 )
 ```
+Per controllare la risposta e quindi se l'operazione è andata a bun fine possiamo usare la funzione ```php getStatus()```
+che restiituisce un valore boleano `true` o `false`
+*Esempio*
+```php
+if ($client->getStatus()) {
+	// OK
+} else {
+	// ERRORE
+}
+```
 
 ## Ricerca SMS
 Per la ricerca dell'SMS è necessario recuperare ID della campagna al momento dell'invio.
