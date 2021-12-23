@@ -42,7 +42,7 @@ modificando il file `/src/TimSmsProfessionalClient.php`
   private $alias     = ' ';  //numero completo da dove inviare i messaggi o Alias Certificato caricato sul proprio profilo
 .....
 ```
-Oppure creando il clinet con il construct
+Oppure creando il client con il construct
 ```php
 $client = new iw5edv\TimSmsProfessionalClient([
     'username'	=> ' ',
@@ -63,7 +63,12 @@ echo '<pre>'; print_r($result); echo '</pre>';
 ```
 *oppure*
 ```php
-$client = new iw5edv\TimSmsProfessionalClient();
+$client = new iw5edv\TimSmsProfessionalClient([
+    'username'	=> ' ',
+    'password'	=> ' ',
+    'token'	=> ' ',
+    'alias'	=> ' '
+]);
 $to = '+391234567890';
 $text = 'Prova';
 $result = $client->InvioSms($to, $text);
@@ -104,7 +109,12 @@ echo '<pre>'; print_r($result); echo '</pre>';
 ```
 *oppure*
 ```php
-$client = new iw5edv\TimSmsProfessionalClient();
+$client = new iw5edv\TimSmsProfessionalClient([
+    'username'	=> ' ',
+    'password'	=> ' ',
+    'token'	=> ' ',
+    'alias'	=> ' '
+]);
 $code = '00000000';  //id campagna precedentemente recuperato
 $result = $client->cercaSms($code);
 
