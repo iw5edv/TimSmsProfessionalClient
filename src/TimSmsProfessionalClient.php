@@ -29,10 +29,10 @@ class TimSmsProfessionalClient {
 	
 
 	/**
-     * @param array $params ('username' => '', 'password' => '', 'token' => '', 'alias' => '')
+	 * @param array $params ('username' => '', 'password' => '', 'token' => '', 'alias' => '')
 	 * 
-     * @return void
-     */
+	 * @return void
+	 */
 	function __construct($params = array()) {
 		if (!empty($params)){
 			$this->username = $params['username'];
@@ -113,14 +113,14 @@ class TimSmsProfessionalClient {
 	 */
 	public function cercaSms($codesms) {
 		$data = Array ( 
-			'username'			=> $this->username,
-			'password'			=> $this->password,
-			'token'				=> $this->token,
-			'alias'				=> $this->alias,
+			'username'		=> $this->username,
+			'password'		=> $this->password,
+			'token'			=> $this->token,
+			'alias'			=> $this->alias,
 			'codiceOperazione'	=> $codesms,
 			'numeroRicorrenza'	=> '0',
-			'offset'			=> '1',
-			'limit'				=> '10'
+			'offset'		=> '1',
+			'limit'			=> '10'
 		);
 		$body = \Unirest\Request\Body::form($data);
 		$this->result = \Unirest\Request::post(self::BASE_URL . 'search', self::HEADERS, $body);
