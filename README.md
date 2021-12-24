@@ -2,6 +2,7 @@
 Semplice Libreria PHP Unofficial Client per invio singoli SMS tramite API del servizio timsmsprofessional.it
 
 Libreria NON ufficiale liberamente creata, non sussite nessun collegamento con la compagnia TIM
+
 https://timsmsprofessional.it è un servizio a pagamento della compagnia telefonica italiana TIM
 
 ## Caratteristiche
