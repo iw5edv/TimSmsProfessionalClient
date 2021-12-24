@@ -1,7 +1,7 @@
 {
 	"name": "iw5edv/tim-sms-professional-client",
 	"type": "library",
-	"description": "Semplice Libreria PHP Client per invio singoli SMS tramite API di TIM",
+	"description": "Semplice Libreria PHP Client per invio singoli SMS tramite API di timsmsprofessional.it",
 	"keywords": ["TIM", "smsprofessional", "API", "client"],
 	"license": "GPL-3.0",
 	"homepage": "https://github.com/iw5edv/TimSmsProfessionalClient",
