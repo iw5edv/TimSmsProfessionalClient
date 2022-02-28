@@ -45,7 +45,7 @@ class TimSmsProfessionalClient {
 
 
 	/**
-	 * Funzione per invio SMS
+	 * Funzione per invio SMS   *** SINGOLO ***
 	 * 
 	 * @param string $msisdn Numero cellulare dove inviare con prefizzo internazionale +
 	 * @param string $testo Testo del messaggio
@@ -67,8 +67,35 @@ class TimSmsProfessionalClient {
 		$this->result = \Unirest\Request::post(self::BASE_URL . 'send/sms/msisdn/static/immediate/single', self::HEADERS, $body);
 		return $this->result;
 	}//public function invioSms
-
-
+	
+	
+	
+	/**
+	 * Funzione per invio SMS   *** DA LISTA ***
+	 * 
+	 * @param string $listaMsisdn Nome Lista precaricata sul server TIM sms Professional
+	 * @param string $testo Testo del messaggio
+	 * 
+	 * @return Object Unirest\Response
+	 */
+	public function invioSmsLista($listaMsisdn, $testo) {
+		$data = Array ( 
+			'username'	=> $this->username,
+			'password'	=> $this->password,
+			'token'		=> $this->token,
+			'alias'		=> $this->alias,
+			'testo'		=> $testo, 
+			'listaMsisdn'	=> $listaMsisdn,
+			'sr'		=> '1'
+			); 
+		$body = \Unirest\Request\Body::multipart($data);
+			
+		$this->result = \Unirest\Request::post(self::BASE_URL . 'send/sms/list/static/immediate/single', self::HEADERS, $body);
+		return $this->result;
+	}//public function invioSmsLista
+	
+	
+	
 	/**
 	 * Funzione per verifica se operazione andata a buon fine
 	 * 
